@@ -5,7 +5,7 @@
  */
 package Posttes6;
 
-public class SuratKTM extends Surat implements Interfacessurat {
+public class SuratKTM extends Surat{
     private int RT;
     private int RW;
     private String Kecamatan;
@@ -24,18 +24,6 @@ public class SuratKTM extends Surat implements Interfacessurat {
         this.RW = 0;
         this.Kecamatan = "";
         this.Keperluan = "";
-    }
-    public void informasi1(){
-        System.out.println("Data Informasi Anda telah Terima oleh Opertor Desa Babulu Darat");    
-    }
-    public void informasi2(){
-        System.out.println("Data Informasi Anda Telah Di Update");
-    }
-    public void informasi3(){
-        System.out.println("");    
-    }
-    public void informasi4(){
-        System.out.println("");
     }
     public int getRT() {
         return RT;

@@ -28,7 +28,7 @@ public class SuratKematian extends Surat{
         this.Keperluan = "";
         this.TanggalMeninggal = "";
     }
-
+    
     public int getRT() {
         return RT;
     }

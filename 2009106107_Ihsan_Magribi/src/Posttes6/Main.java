@@ -7,8 +7,8 @@ import java.util.Scanner;
  *
  * @author salim
  */
-final class Main {
-
+final class Main extends Informasi{
+    
     final ArrayList<SuratKTM> dataktm;
     final ArrayList<SuratKematian> datameninggal;
 
@@ -67,11 +67,19 @@ final class Main {
         });
     }
     
+    public static void Keluar(){
+        System.out.println("=================================================================");
+        System.out.println("\t\t\tKANTOR DESA BABULU DARAT");
+        System.out.println("JL.Provinsi KM 48 Kecamatan Babulu Kabupaten Penajam Paser utara");
+        System.out.println("=================================================================");
+        System.out.println("");
+    }
     
     public static void main(String[] args) {
         Scanner inputdata = new Scanner(System.in);
         int coba = 1;
         Main pts = new Main();
+        Main inf = new Main ();
         while (coba == 1) {
             System.out.println("------------------------------------------");
             System.out.println("\tSELAMAT DATANG DI MENU \n\tSISTEM MANAJEMEN PERSURATAN \n\tKANTOR DESA BABULU DARAT ");
@@ -125,6 +133,7 @@ final class Main {
                     System.out.print("Keperluan Surat : ");
                     Keperluan = inputdata.next();
                     pts.isidataktm(RT, RW, Kecamatan, Keperluan,Nik, Nama, TanggalLahir, JenisKelamin);
+                    inf.informasi4();
                 }
                 else if (pilihan2 == 2) {
                     System.out.print("NIK\t\t: ");
@@ -153,8 +162,8 @@ final class Main {
                 
                     System.out.print("Tanggal Meninggal : ");
                     TGLkematian = inputdata.next();
-                
                     pts.isidatameninggal(RT, RW, Kecamatan, Keperluan,TGLkematian,Nik, Nama, TanggalLahir, JenisKelamin);
+                    inf.informasi4();
                 }     
 
             } else if (pilihan == 2) {
@@ -167,9 +176,12 @@ final class Main {
                 System.out.print("Masukkan Pilihan Anda : ");
                 pilihan2 = inputdata.nextInt();
                 if (pilihan2 == 1) {
-                    pts.showdataktm();}
+                    pts.showdataktm();
+                    inf.informasi1();
+                }
                 else if (pilihan2 == 2) {
                     pts.showdatameninggal();
+                    inf.informasi1();
                 }
             } else if (pilihan == 3) {
                 int Nik;
@@ -210,6 +222,7 @@ final class Main {
                     System.out.print("Keperluan Surat : ");
                     Keperluan = inputdata.next();
                     pts.ubahdataktm(Masukkan, Nik, Nama, TanggalLahir, JenisKelamin, RT, RW, Kecamatan, Keperluan);
+                    inf.informasi2();
                 }
                 if (pilihan2 == 2) {
                     System.out.print("Masukkan NIK yang Ingin Di Ubah : ");
@@ -234,6 +247,7 @@ final class Main {
                     System.out.print("Keperluan Surat : ");
                     TGLmeninggal = inputdata.next();
                     pts.ubahdatameninggal(Masukkan, RT, RW, Kecamatan, Keperluan,TGLmeninggal, Nik, Nama, TanggalLahir, JenisKelamin);
+                    inf.informasi2();
                 }
 
 
@@ -251,19 +265,20 @@ final class Main {
                     int hapusdata;
                     System.out.print("Masukkan NIK : ");
                     hapusdata = inputdata.nextInt();
-                    pts.hapusdataktm(hapusdata);}
+                    pts.hapusdataktm(hapusdata);
+                    inf.informasi3();
+                }
                 else if (pilihan2 == 2) {
                     int hapusdata;
                     System.out.print("Masukkan NIK : ");
                     hapusdata = inputdata.nextInt();
-                    pts.hapusdatameninggal(hapusdata);}
+                    pts.hapusdatameninggal(hapusdata);
+                    inf.informasi3();
+                }
                 
  
             } else if (pilihan == 0) {
-                System.out.println("=================================================================");
-                System.out.println("\t\t\tKANTOR DESA BABULU DARAT");
-                System.out.println("JL.Provinsi KM 48 Kecamatan Babulu Kabupaten Penajam Paser utara");
-                System.out.println("=================================================================");
+                Keluar();
                 break;
             }
 
